@@ -20,9 +20,9 @@ jobs:
           RDP_PASSWORD: ${{ secrets.RDP_PASSWORD }}
         run: |
           $pw = ConvertTo-SecureString $env:RDP_PASSWORD -AsPlainText -Force
-          New-LocalUser -Name "rdpuser" -Password $pw
-          Add-LocalGroupMember -Group "Administrators" -Member "rdpuser"
-          Add-LocalGroupMember -Group "Remote Desktop Users" -Member "rdpuser"
+          New-LocalUser -Name "xsular" -Password $pw
+          Add-LocalGroupMember -Group "Administrators" -Member "xsular"
+          Add-LocalGroupMember -Group "Remote Desktop Users" -Member "xsular"
 
       - name: Connect Tailscale
         uses: tailscale/github-action@v3
